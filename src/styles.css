@@ -1,0 +1,10 @@
+.centered-text{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.centered-button{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
