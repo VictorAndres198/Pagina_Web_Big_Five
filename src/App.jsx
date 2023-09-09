@@ -12,4 +12,11 @@ function App(){
     )
 }
 
+/*
+PascalCase: Los componentes en React tienen que ser Pascal Case
+camelCase
+snake_case
+kebab-case
+*/
+
 export {App};
