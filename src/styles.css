@@ -1,10 +1,7 @@
-.centered-text{
+.centered-column{
     display:flex;
-    justify-content: center;
-    align-items:center;
-}
-.centered-button{
-    display:flex;
+    flex-direction: column;
     justify-content:center;
     align-items:center;
+    gap: 15px;
 }

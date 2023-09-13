@@ -5,9 +5,11 @@ import './styles.css';
 function App(){
     return (
         <div>            
-            <Navbar />            
-            <h1 className='centered-text'>Iniciar el Test</h1>
-            <button className='centered-button'>Iniciar el Test</button>
+            <Navbar />
+            <section className='centered-column'>
+                <h1 className='mt-3'>Test Big Five</h1>
+                <button className="btn btn-outline-secondary btn-lg btn-block">Iniciar el Test</button>       
+            </section>            
         </div>
     )
 }
