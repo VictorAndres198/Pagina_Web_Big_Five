@@ -1,24 +1,22 @@
-import React from 'react';
-import Navbar from './Navbar';
-import './styles.css';
+import React from 'react'
+import './styles.css'
+import Navbar from './Navbar'
+import {Route,Routes} from 'react-router-dom'
+
+
+const Home = () => <h1>Home</h1>
+const Test = () => <h1>Test</h1>
 
 function App(){
     return (
-        <div>            
-            <Navbar />
-            <section className='centered-column'>
-                <h1 className='mt-3'>Test Big Five</h1>
-                <button className="btn btn-outline-secondary btn-lg btn-block">Iniciar el Test</button>       
-            </section>            
+        <div>  
+            <Navbar/>
+            <Routes>
+                <Route path='/Home' element={<Home/>}/>
+                <Route path='/Test' element={<Test/>}/>
+            </Routes>   
         </div>
     )
 }
-
-/*
-PascalCase: Los componentes en React tienen que ser Pascal Case
-camelCase
-snake_case
-kebab-case
-*/
 
 export {App};

@@ -2,16 +2,17 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 
 function CustomNavbar() {
     return (
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="/">Logo</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/Home">Logo</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
                     <NavDropdown title="Idioma" id="language-dropdown">
-                        <NavDropdown.Item>Español</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/Test">Español</NavDropdown.Item>
                         <NavDropdown.Item>Inglés</NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="Menú" id="menu-dropdown">
