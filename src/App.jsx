@@ -1,11 +1,10 @@
 import React from 'react'
 import './styles.css'
-import Navbar from './Navbar'
 import {Route,Routes} from 'react-router-dom'
 
-
-const Home = () => <h1>Home</h1>
-const Test = () => <h1>Test</h1>
+import Home from './Components/Home'; 
+import Test from './Components/Test';
+import Navbar from './Navbar';
 
 function App(){
     return (
