@@ -81,7 +81,7 @@ function Neuroticism() {
 const calculateResultsByGroup = () => {
   const resultsByGroup = {};
 
-  allQuestions.forEach((question) => {
+  neuroticismQuestions.forEach((question) => {
     const group = question.group;
     const questionId = question.id;
     const responseIndex = responses[questionId];
@@ -102,7 +102,7 @@ const calculateResultsByGroup = () => {
 const calculateResultsByQuestionInGroup = (groupName) => {
   const resultsByQuestion = {};
 
-  const groupQuestions = allQuestions.filter((question) => question.group === groupName);
+  const groupQuestions = neuroticismQuestions.filter((question) => question.group === groupName);
 
   groupQuestions.forEach((question) => {
     const questionId = question.id;
