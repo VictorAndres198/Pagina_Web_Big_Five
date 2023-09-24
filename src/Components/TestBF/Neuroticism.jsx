@@ -9,50 +9,62 @@ function Neuroticism() {
     {
       id: 'AnsiedadP1',
       question: 'Me suelo preocupar por las cosas',
+      group: 'Neuroticismo',
     },
     {
       id: 'AnsiedadP2',
       question: 'Me estreso fácilmente',
+      group: 'Neuroticismo',
     },
     {
       id: 'IraP1',
       question: 'Me molesto fácilmente',
+      group: 'Neuroticismo',
     },
     {
       id: 'IraP2',
       question: 'Suelo perder mi temperamento',
+      group: 'Neuroticismo',
     },
     {
       id: 'DepresionP1',
       question: 'A menudo me siento triste',
+      group: 'Neuroticismo',
     },
     {
       id: 'DepresionP2',
       question: 'Me desagrado',
+      group: 'Neuroticismo',
     },
     {
       id: 'AutoconcienciaP1',
       question: 'Me resulta difícil acercarme a los demás',
+      group: 'Neuroticismo',
     },
     {
       id: 'AutoconcienciaP2',
       question: 'Soy fácilmente intimidado',
+      group: 'Neuroticismo',
     },
     {
       id: 'InmoderaciónP1',
       question: 'Rara vez me dejo llevar',
+      group: 'Neuroticismo',
     },
     {
       id: 'InmoderaciónP2',
       question: 'Puedo controlar mis antojos',
+      group: 'Neuroticismo',
     },
     {
       id: 'VulnerabilidadP1',
       question: 'Me mantengo calmado bajo presión',
+      group: 'Neuroticismo',
     },
     {
       id: 'VulnerabilidadP2',
       question: 'Estoy calmado incluso en momentos de tensión',
+      group: 'Neuroticismo',
     }
   ];
 
@@ -64,6 +76,55 @@ function Neuroticism() {
     'Parcialmente en desacuerdo',
     'Totalmente en desacuerdo',
   ];
+
+  // Calcular resultados por grupo
+const calculateResultsByGroup = () => {
+  const resultsByGroup = {};
+
+  allQuestions.forEach((question) => {
+    const group = question.group;
+    const questionId = question.id;
+    const responseIndex = responses[questionId];
+
+    if (!resultsByGroup[group]) {
+      resultsByGroup[group] = 0;
+    }
+
+    if (responseIndex !== undefined) {
+      resultsByGroup[group] += responseIndex + 1; // Suma +1 para que coincida con los valores (0-4)
+    }
+  });
+
+  return resultsByGroup;
+};
+
+
+const calculateResultsByQuestionInGroup = (groupName) => {
+  const resultsByQuestion = {};
+
+  const groupQuestions = allQuestions.filter((question) => question.group === groupName);
+
+  groupQuestions.forEach((question) => {
+    const questionId = question.id;
+    const responseIndex = responses[questionId];
+
+    if (responseIndex !== undefined) {
+      resultsByQuestion[questionId] = responseIndex + 1; // Suma +1 para que coincida con los valores (0-4)
+    }
+  });
+
+  return resultsByQuestion;
+};
+
+// Calcular los resultados por grupo y por pregunta
+const resultsByGroup = calculateResultsByGroup();
+const resultsInNeuroticism = calculateResultsByQuestionInGroup('Neuroticismo');
+
+// Mostrar resultados por grupo
+console.log('Resultados por Grupo:', resultsByGroup);
+
+// Mostrar resultados por pregunta dentro de un grupo
+console.log('Resultados en Neuroticismo:', resultsInNeuroticism);
 
   const pageSize = 3; // Cantidad de preguntas por página
 
