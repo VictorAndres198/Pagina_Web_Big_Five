@@ -1,7 +1,41 @@
-.centered-column{
+  .centered-column{
     display:flex;
     flex-direction: column;
     justify-content:center;
     align-items:center;
-    gap: 15px;
+    gap: 15px;    
+    margin-top: 3%;
 }
+.centered-column-test{
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+    gap: 15px;    
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+  .bold-text {
+    font-weight: bold;
+    font-size: 18px; /* Ajusta el tamaño de fuente según tus preferencias */
+  }
+  
+  .option-label {
+    margin-left: 10px; /* Ajusta el margen izquierdo según tus preferencias */
+  }
+
+  .no-bullets {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .question-container {
+    margin-left: 20vw; /* Espacio a la izquierda en unidades vw */
+    margin-right: 20vw; /* Espacio a la derecha en unidades vw */
+  }
+
+  .progress-bar-test {
+    margin-top: 5vw;
+    margin-bottom: 3vw;
+  }
