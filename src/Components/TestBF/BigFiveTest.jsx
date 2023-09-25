@@ -89,6 +89,15 @@ function BigFiveTest() {
     'Totalmente en desacuerdo',
   ];
 
+  // Define los valores asociados a las opciones de respuesta
+  const optionValues = [
+    5, // Totalmente de acuerdo
+    4, // Parcialmente de acuerdo
+    3, // Neutral
+    2, // Parcialmente en desacuerdo
+    1, // Totalmente en desacuerdo
+  ];
+
   const pageSize = 3; // Cantidad de preguntas por página
 
   // Estado para controlar la página actual
@@ -184,21 +193,11 @@ console.log('Resultados para la Base de Datos:', resultsToDatabase);
 
     // Codigo para asignar puntajes a las respuestas 
     const handleResponseChange = (questionId, responseIndex) => {
-    // Resta 1 al valor máximo (4) para invertir los puntajes
-    let invertedScore = 4 - responseIndex;
+    // Obtener el valor asociado a la respuesta seleccionada
+    const selectedValue = optionValues[responseIndex];
 
-    // Verifica si la pregunta actual debe tener puntajes no invertidos
-    if (
-      questionId === 'InmoderacionP1' ||
-      questionId === 'InmoderacionP2' ||
-      questionId === 'VulnerabilidadP1' ||
-      questionId === 'VulnerabilidadP2'
-    ) {
-      // Si es una de las preguntas que deben tener puntajes normales
-      invertedScore = responseIndex; // Usa el puntaje normal
-    }
-
-    setResponses({ ...responses, [questionId]: invertedScore });
+    // Actualizar el estado de las respuestas
+    setResponses({ ...responses, [questionId]: selectedValue });
     };
 
     // Función para calcular el porcentaje de preguntas respondidas
@@ -256,7 +255,7 @@ console.log('Resultados para la Base de Datos:', resultsToDatabase);
                       type="radio"
                       name={question.id}
                       value={index}
-                      checked={responses[question.id] === index}
+                      checked={responses[question.id] === optionValues[index]} // Comparar con el valor seleccionado
                       onChange={() => handleResponseChange(question.id, index)}
                     />
                     {option}
