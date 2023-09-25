@@ -3,9 +3,9 @@ import '../../styles.css';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Button from 'react-bootstrap/Button';
 
-function Neuroticism() {
+function BigFiveTest() {
   // Define las preguntas y opciones de respuesta de manera programática
-  const neuroticismQuestions = [
+  const bigfiveQuestions = [
     {
       id: 'AnsiedadP1',
       question: 'Me suelo preocupar por las cosas',
@@ -95,7 +95,7 @@ function Neuroticism() {
 const calculateResultsByGroup = () => {
   const resultsByGroup = {};
 
-  neuroticismQuestions.forEach((question) => {
+  bigfiveQuestions.forEach((question) => {
     const group = question.group;
     const questionId = question.id;
     const responseIndex = responses[questionId];
@@ -115,7 +115,7 @@ const calculateResultsByGroup = () => {
 const calculateResultsByQuestionInGroup = (groupName) => {
   const resultsByQuestion = {};
 
-  const groupQuestions = neuroticismQuestions.filter((question) => question.group === groupName);
+  const groupQuestions = bigfiveQuestions.filter((question) => question.group === groupName);
 
   groupQuestions.forEach((question) => {
     const questionId = question.id;
@@ -151,14 +151,14 @@ console.log('Resultados en Neuroticismo:', resultsInNeuroticism);
 
     // Función para calcular el porcentaje de preguntas respondidas
     const calculateProgress = () => {
-      const totalQuestions = neuroticismQuestions.length;
+      const totalQuestions = bigfiveQuestions.length;
       const answeredQuestions = Object.keys(responses).length;
       return (answeredQuestions / totalQuestions) * 100;
     };
 
     useEffect(() => {
     // Verificar si se han respondido todas las preguntas actuales
-      const currentQuestions = neuroticismQuestions.slice(
+      const currentQuestions = bigfiveQuestions.slice(
         currentPage * pageSize,
         (currentPage + 1) * pageSize
       );
@@ -169,11 +169,11 @@ console.log('Resultados en Neuroticismo:', resultsInNeuroticism);
 
       setCanAdvance(allAnswered);
       setCanGoBack(currentPage > 0);
-    }, [responses, currentPage, neuroticismQuestions]);
+    }, [responses, currentPage, bigfiveQuestions]);
 
 
     const nextPage = () => {
-      if (currentPage < neuroticismQuestions.length / pageSize - 1) {
+      if (currentPage < bigfiveQuestions.length / pageSize - 1) {
         setCurrentPage(currentPage + 1);
       }
     };
@@ -184,7 +184,7 @@ console.log('Resultados en Neuroticismo:', resultsInNeuroticism);
       }
     };
   
-    const currentQuestions = neuroticismQuestions.slice(
+    const currentQuestions = bigfiveQuestions.slice(
       currentPage * pageSize,
       (currentPage + 1) * pageSize
     );
@@ -228,4 +228,4 @@ console.log('Resultados en Neuroticismo:', resultsInNeuroticism);
   );
 }
 
-export default Neuroticism;
+export default BigFiveTest;
