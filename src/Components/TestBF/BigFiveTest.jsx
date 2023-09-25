@@ -185,7 +185,7 @@ console.log('Resultados para la Base de Datos:', resultsToDatabase);
     // Codigo para asignar puntajes a las respuestas 
     const handleResponseChange = (questionId, responseIndex) => {
     // Resta 1 al valor máximo (4) para invertir los puntajes
-    const invertedScore = 4 - responseIndex;
+    let invertedScore = 4 - responseIndex;
 
     // Verifica si la pregunta actual debe tener puntajes no invertidos
     if (
