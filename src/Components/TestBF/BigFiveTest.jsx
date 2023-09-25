@@ -68,16 +68,6 @@ function BigFiveTest() {
       group: 'Neuroticismo',
     },
     // Preguntas de extroversion
-    {
-      id: 'VulnerabilidadP2',
-      question: 'Estoy calmado incluso en momentos de tensión',
-      group: 'Neuroticismo',
-    },
-    {
-      id: 'VulnerabilidadP2',
-      question: 'Estoy calmado incluso en momentos de tensión',
-      group: 'Neuroticismo',
-    },
   ];
 
   // Define las opciones de respuesta para todas las preguntas
