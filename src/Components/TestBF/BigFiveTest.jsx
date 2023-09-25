@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 function BigFiveTest() {
   // Define las preguntas y opciones de respuesta de manera programática
   const bigfiveQuestions = [
-    // Preguntas de Neuroticismo
+    // !Neuroticismo
     {
       id: 'AnsiedadP1',
       question: 'Me suelo preocupar por las cosas',
@@ -67,7 +67,250 @@ function BigFiveTest() {
       question: 'Estoy calmado incluso en momentos de tensión',
       group: 'Neuroticismo',
     },
-    // Preguntas de extroversion
+    // !Extraversion
+    {
+      id: 'AmabilidadP1',
+      question: 'Hago amigos fácilmente',
+      group: 'Extraversion',
+    },
+    {
+      id: 'AmabilidadP2',
+      question: 'Me encuentro cómodo en compañia de otros',
+      group: 'Extraversion',
+    },
+    {
+      id: 'SociabilidadP1',
+      question: 'Me gustan las fiestas',
+      group: 'Extraversion',
+    },
+    {
+      id: 'SociabilidadP2',
+      question: 'Evito a la multitud',
+      group: 'Extraversion',
+    },
+    {
+      id: 'AsertividadP1',
+      question: 'Tomo el control en situaciones sociales',
+      group: 'Extraversion',
+    },
+    {
+      id: 'AsertividadP2',
+      question: 'Trato de liderar a los demás',
+      group: 'Extraversion',
+    },
+    {
+      id: 'NivelActividadP1',
+      question: 'Estoy siempre ocupado',
+      group: 'Extraversion',
+    },
+    {
+      id: 'NivelActividadP2',
+      question: 'Siempre estoy haciendo cosas',
+      group: 'Extraversion',
+    },
+    {
+      id: 'BusquedaEmocionP1',
+      question: 'Me gustan las actividades emocionantes',
+      group: 'Extraversion',
+    },
+    {
+      id: 'BusquedaEmocionP2',
+      question: 'Busco la aventura',
+      group: 'Extraversion',
+    },
+    {
+      id: 'AlegriaP1',
+      question: 'Me divierto mucho',
+      group: 'Extraversion',
+    },
+    {
+      id: 'AlegriaP2',
+      question: 'Amo la vida',
+      group: 'Extraversion',
+    },
+    // !Apertura a la Experiencia
+    {
+      id: 'ImaginacionP1',
+      question: 'Tengo una vivida imaginación',
+      group: 'Apertura',
+    },
+    {
+      id: 'ImaginacionP2',
+      question: 'Amo soñar despierto',
+      group: 'Apertura',
+    },
+    {
+      id: 'InteresArtisticoP1',
+      question: 'Creo en la importancia del arte',
+      group: 'Apertura',
+    },
+    {
+      id: 'InteresArtisticoP2',
+      question: 'No me gusta el arte',
+      group: 'Apertura',
+    },
+    {
+      id: 'EmocionalidadP1',
+      question: 'Experimento mis emociones intensamente',
+      group: 'Apertura',
+    },
+    {
+      id: 'EmocionalidadP2',
+      question: 'No me afectan facilmente mis emociones',
+      group: 'Apertura',
+    },
+    {
+      id: 'AventuraP1',
+      question: 'Prefiero las cosas que ya conozco',
+      group: 'Apertura',
+    },
+    {
+      id: 'AventuraP2',
+      question: 'No me gusta la idea del cambio',
+      group: 'Apertura',
+    },
+    {
+      id: 'IntelectoP1',
+      question: 'Evito las discusiones filosóficas',
+      group: 'Apertura',
+    },
+    {
+      id: 'IntelectoP2',
+      question: 'No me interesan las discusiones teóricas',
+      group: 'Apertura',
+    },
+    {
+      id: 'LiberalismoP1',
+      question: 'Voto por candidatos politicamente liberales',
+      group: 'Apertura',
+    },
+    {
+      id: 'LiberalismoP2',
+      question: 'Creo en una religión verdadera',
+      group: 'Apertura',
+    },
+    //! Agradabilidad
+    {
+      id: 'ConfianzaP1',
+      question: 'Confio en los demás',
+      group: 'Agradabilidad',
+    },
+    {
+      id: 'ConfianzaP2',
+      question: 'Creo en las buenas intenciones de los demás',
+      group: 'Agradabilidad',
+    },
+    {
+      id: 'MoralidadP1',
+      question: 'Hago trampa para ganar ventaja',
+      group: 'Agradabilidad',
+    },
+    {
+      id: 'MoralidadP2',
+      question: 'Me aprovecho de los demás',
+      group: 'Agradabilidad',
+    },
+    {
+      id: 'AltruismoP1',
+      question: 'Me gusta ayudar a los demás',
+      group: 'Agradabilidad',
+    },
+    {
+      id: 'AltruismoP2',
+      question: 'Me preocupo por los demás',
+      group: 'Agradabilidad',
+    },
+    {
+      id: 'CooperacionP1',
+      question: 'Insulto a la gente',
+      group: 'Agradabilidad',
+    },
+    {
+      id: 'CooperacionP2',
+      question: 'Ejerzo venganza sobre los demás',
+      group: 'Agradabilidad',
+    },
+    {
+      id: 'ModestiaP1',
+      question: 'Creo que soy mejor que los demás',
+      group: 'Agradabilidad',
+    },
+    {
+      id: 'ModestiaP2',
+      question: 'Pienso muy bien de mi mismo',
+      group: 'Agradabilidad',
+    },
+    {
+      id: 'SimpatiaP1',
+      question: 'Simpatizo con las personas sin hogar',
+      group: 'Agradabilidad',
+    },
+    {
+      id: 'SimpatiaP2',
+      question: 'Siento simpatia por aquellos que están en peor situación que yo',
+      group: 'Agradabilidad',
+    },
+    //! Diligencia
+    {
+      id: 'AutoeficaciaP1',
+      question: 'Me encargo de las tareas fácilmente',
+      group: 'Diligencia',
+    },
+    {
+      id: 'AutoeficaciaP2',
+      question: 'Se como hacer las cosas',
+      group: 'Diligencia',
+    },
+    {
+      id: 'OrdenP1',
+      question: 'Me gusta el orden',
+      group: 'Diligencia',
+    },
+    {
+      id: 'OrdenP2',
+      question: 'Dejo desordenada mi habitación',
+      group: 'Diligencia',
+    },
+    {
+      id: 'ResponsabilidadP1',
+      question: 'Digo la verdad',
+      group: 'Diligencia',
+    },
+    {
+      id: 'ResponsabilidadP2',
+      question: 'Rompo mis promesas',
+      group: 'Diligencia',
+    },
+    {
+      id: 'LogrosP1',
+      question: 'Trabajo duro',
+      group: 'Diligencia',
+    },
+    {
+      id: 'LogrosP2',
+      question: 'Pongo altos estándares para mi y los demás',
+      group: 'Diligencia',
+    },
+    {
+      id: 'DisciplinaP1',
+      question: 'Llevo a cabo mis planes',
+      group: 'Diligencia',
+    },
+    {
+      id: 'DisciplinaP2',
+      question: 'Tengo dicultad para iniciar tareas',
+      group: 'Diligencia',
+    },
+    {
+      id: 'CautelaP1',
+      question: 'Tomo decisiones precipitadas',
+      group: 'Diligencia',
+    },
+    {
+      id: 'CautelaP2',
+      question: 'Actuo sin pensar',
+      group: 'Diligencia',
+    }
   ];
 
   // Define las opciones de respuesta para todas las preguntas
@@ -110,8 +353,8 @@ function BigFiveTest() {
   // Controla si se puede regresar
   const [canGoBack, setCanGoBack] = useState(false); 
 
-// Calcular resultados por grupo
-const calculateResultsByGroup = () => {
+  // Calcular resultados por grupo
+  const calculateResultsByGroup = () => {
   const resultsByGroup = {};
 
   bigfiveQuestions.forEach((question) => {
@@ -129,9 +372,9 @@ const calculateResultsByGroup = () => {
   });
 
   return resultsByGroup;
-};
+  };
 
-const calculateResultsByQuestionInGroup = (groupName) => {
+  const calculateResultsByQuestionInGroup = (groupName) => {
   const resultsByQuestion = {};
 
   const groupQuestions = bigfiveQuestions.filter((question) => question.group === groupName);
@@ -146,53 +389,107 @@ const calculateResultsByQuestionInGroup = (groupName) => {
   });
 
   return resultsByQuestion;
-};
+  };
 
-// Calcular los resultados por grupo y por pregunta
-// todo:Agregar los demás campos, ya funciona neuroticismo
-const resultsByGroup = calculateResultsByGroup();
-const resultsInNeuroticism = calculateResultsByQuestionInGroup('Neuroticismo');
+  // Calcular los resultados por grupo y por pregunta
+  const resultsByGroup = calculateResultsByGroup();
+  const resultsInNeuroticismo = calculateResultsByQuestionInGroup('Neuroticismo');
+  const resultsInExtraversion = calculateResultsByQuestionInGroup('Extraversion');
+  const resultsInApertura = calculateResultsByQuestionInGroup('Apertura');
+  const resultsInAgradabilidad = calculateResultsByQuestionInGroup('Agradabilidad');
+  const resultsInDiligencia = calculateResultsByQuestionInGroup('Diligencia');
 
-// Mostrar resultados por grupo
-// todo: Quitar los resultados de la consola para luego mandarlo a la base de datos, ya funciona neuroticismo
-console.log('Resultados por Grupo:', resultsByGroup);
-// Mostrar resultados por pregunta dentro de un grupo
-console.log('Resultados en Neuroticismo:', resultsInNeuroticism);
-
-// !Modificar para agregar los valores a la base de datos que agregare
-// Ahora puedes guardar los resultados en un formato que facilite el envío a una base de datos
-const resultsToDatabase = {
+  // Ahora puedes guardar los resultados en un formato que facilite el envío a una base de datos
+  const resultsToDatabase = {
   neuroticismo: {
     total: resultsByGroup['Neuroticismo'],
-    ansiedad: resultsInNeuroticism['AnsiedadP1'] + resultsInNeuroticism['AnsiedadP2'],
-    ira: resultsInNeuroticism['IraP1'] + resultsInNeuroticism['IraP2'],
-    depresion: resultsInNeuroticism['DepresionP1'] + resultsInNeuroticism['DepresionP2'],
-    autoconciencia: resultsInNeuroticism['AutoconcienciaP1'] + resultsInNeuroticism['AutoconcienciaP2'],
-    inmoderacion: resultsInNeuroticism['InmoderacionP1'] + resultsInNeuroticism['InmoderacionP2'],
-    vulnerabilidad: resultsInNeuroticism['VulnerabilidadP1'] + resultsInNeuroticism['VulnerabilidadP2'],
+    ansiedad: resultsInNeuroticismo['AnsiedadP1'] + resultsInNeuroticismo['AnsiedadP2'],
+    ira: resultsInNeuroticismo['IraP1'] + resultsInNeuroticismo['IraP2'],
+    depresion: resultsInNeuroticismo['DepresionP1'] + resultsInNeuroticismo['DepresionP2'],
+    autoconciencia: resultsInNeuroticismo['AutoconcienciaP1'] + resultsInNeuroticismo['AutoconcienciaP2'],
+    inmoderacion: resultsInNeuroticismo['InmoderacionP1'] + resultsInNeuroticismo['InmoderacionP2'],
+    vulnerabilidad: resultsInNeuroticismo['VulnerabilidadP1'] + resultsInNeuroticismo['VulnerabilidadP2'],
   },
+
   extraversion: {
-    //total: resultsByGroup['Extraversion'],
-    // Agrega preguntas dentro de Extraversion según sea necesario
+    total: resultsByGroup['Extraversion'],
+    amabilidad: resultsInExtraversion['AmabilidadP1']+resultsInExtraversion['AmabilidadP2'],
+    sociabilidad: resultsInExtraversion['SociabilidadP1']+resultsInExtraversion['SociabilidadP2'],
+    asertividad: resultsInExtraversion['AsertividadP1']+resultsInExtraversion['AsertividadP2'],
+    actividad: resultsInExtraversion['NivelActividadP1']+resultsInExtraversion['NivelActividadP2'],
+    emocion: resultsInExtraversion['BusquedaEmocionP1']+resultsInExtraversion['BusquedaEmocionP2'],
+    alegria: resultsInExtraversion['AlegriaP1']+resultsInExtraversion['AlegriaP2']
   },
-};
+
+  apertura: {
+    total: resultsByGroup['Apertura'],
+    imaginacion: resultsInApertura['ImaginacionP1']+resultsInApertura['ImaginacionP2'],
+    arte: resultsInApertura['InteresArtisticoP1']+resultsInApertura['InteresArtisticoP2'],
+    emocionalidad: resultsInApertura['EmocionalidadP1']+resultsInApertura['EmocionalidadP2'],
+    aventura: resultsInApertura['AventuraP1']+resultsInApertura['AventuraP2'],
+    intelecto: resultsInApertura['IntelectoP1']+resultsInApertura['IntelectoP2'],
+    liberalismo: resultsInApertura['LiberalismoP1']+resultsInApertura['LiberalismoP2']
+  },
+
+  agradabilidad: {
+    total: resultsByGroup['Agradabilidad'],
+    confianza: resultsInAgradabilidad['ConfianzaP1']+resultsInAgradabilidad['ConfianzaP2'],
+    moral: resultsInAgradabilidad['MoralidadP1']+resultsInAgradabilidad['MoralidadP2'],
+    altruismo: resultsInAgradabilidad['AltruismoP1']+resultsInAgradabilidad['AltruismoP2'],
+    cooperacion: resultsInAgradabilidad['CooperacionP1']+resultsInAgradabilidad['CooperacionP2'],
+    modestia: resultsInAgradabilidad['ModestiaP1']+resultsInAgradabilidad['ModestiaP2'],
+    simpatia: resultsInAgradabilidad['SimpatiaP1']+resultsInAgradabilidad['SimpatiaP2']
+  },
+
+  diligencia: {
+    total: resultsByGroup['Diligencia'],
+    autoeficacia: resultsInDiligencia['AutoeficaciaP1']+resultsInDiligencia['AutoeficaciaP2'],
+    orden: resultsInDiligencia['OrdenP1']+resultsInDiligencia['OrdenP2'],
+    responsabilidad: resultsInDiligencia['ResponsabilidadP1']+resultsInDiligencia['ResponsabilidadP2'],
+    logros: resultsInDiligencia['LogrosP1']+resultsInDiligencia['LogrosP2'],
+    disciplina: resultsInDiligencia['DisciplinaP1']+resultsInDiligencia['DisciplinaP2'],
+    cautela: resultsInDiligencia['CautelaP1']+resultsInDiligencia['CautelaP2']
+  }
+  };
     // todo: Esto es para comprobar los puntajes, borrar despues
     // Ahora tienes un objeto `resultsToDatabase` con los resultados en un formato que puedes enviar a tu base de datos
     console.log('Resultados para la Base de Datos:', resultsToDatabase);
-
 
     // Estado para el valor visual de las opciones seleccionadas
     const [visualValues, setVisualValues] = useState({});
 
     // Codigo para asignar puntajes a las respuestas
-    // todo: Agregar las preguntas de puntajes invertidos, solo estan los de neuroticismo 
     const handleResponseChange = (questionId, responseIndex) => {    
     // Verificar si la pregunta es una de las que deben invertir los valores
     if (
+      //Neuroticismo
       questionId === 'InmoderacionP1' ||
       questionId === 'InmoderacionP2' ||
       questionId === 'VulnerabilidadP1' ||
-      questionId === 'VulnerabilidadP2'
+      questionId === 'VulnerabilidadP2' ||
+      //Extraversion
+      questionId === 'SociabilidadP2' ||
+      //Apertura a la experiencia
+      questionId === 'InteresArtisticoP2' ||
+      questionId === 'EmocionalidadP2' ||
+      questionId === 'AventuraP1' ||
+      questionId === 'AventuraP2' ||
+      questionId === 'IntelectoP1' ||
+      questionId === 'IntelectoP2' ||
+      questionId === 'LiberalismoP2' ||
+      //Agradabilidad o Afabilidad
+      questionId === 'MoralidadP1' ||
+      questionId === 'MoralidadP2' ||
+      questionId === 'CooperacionP1' ||
+      questionId === 'CooperacionP2' ||
+      questionId === 'ModestiaP1' ||
+      questionId === 'ModestiaP2' ||
+      // Diligencia, Disciplia o Conciencia
+      questionId === 'OrdenP2' ||
+      questionId === 'ResponsabilidadP2' ||
+      questionId === 'DisciplinaP2' ||
+      questionId === 'CautelaP1' ||
+      questionId === 'CautelaP2'
     ) {
       // Obtener el valor invertido
       const invertedValue = optionValuesI[responseIndex];
