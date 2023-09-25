@@ -194,7 +194,19 @@ console.log('Resultados para la Base de Datos:', resultsToDatabase);
     // Codigo para asignar puntajes a las respuestas 
     const handleResponseChange = (questionId, responseIndex) => {
     // Obtener el valor asociado a la respuesta seleccionada
-    const selectedValue = optionValues[responseIndex];
+    let selectedValue = optionValues[responseIndex];
+
+    // Verificar si la pregunta es una de las que deben invertir los valores
+    if (
+      questionId === 'InmoderacionP1' ||
+      questionId === 'InmoderacionP2' ||
+      questionId === 'VulnerabilidadP1' ||
+      questionId === 'VulnerabilidadP2'
+    ) {
+      // Invertir el valor
+      selectedValue = 6 - selectedValue;
+    }
+
 
     // Actualizar el estado de las respuestas
     setResponses({ ...responses, [questionId]: selectedValue });
