@@ -191,6 +191,8 @@ console.log('Resultados para la Base de Datos:', resultsToDatabase);
 
     // Codigo para asignar puntajes a las respuestas 
     const handleResponseChange = (questionId, responseIndex) => {
+    
+      let selectedValue;
 
     // Verificar si la pregunta es una de las que deben invertir los valores
     if (
@@ -199,15 +201,14 @@ console.log('Resultados para la Base de Datos:', resultsToDatabase);
       questionId === 'VulnerabilidadP1' ||
       questionId === 'VulnerabilidadP2'
     ) {
-      // Obtener el valor invertido
-      const invertedValue = optionValuesI[responseIndex];
-      setResponses({ ...responses, [questionId]: invertedValue });
-    } else {
-      // Obtener el valor asociado a la respuesta seleccionada
-      const selectedValue = optionValues[responseIndex];
+        // Obtener el valor invertido
+        selectedValue = optionValuesI[responseIndex];
+      } else {
+        // Obtener el valor asociado a la respuesta seleccionada
+        selectedValue = optionValues[responseIndex];
+      }
       // Actualizar el estado de las respuestas
       setResponses({ ...responses, [questionId]: selectedValue });
-    }
     };
 
     // Función para calcular el porcentaje de preguntas respondidas
