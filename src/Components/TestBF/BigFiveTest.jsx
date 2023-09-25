@@ -67,7 +67,17 @@ function BigFiveTest() {
       question: 'Estoy calmado incluso en momentos de tensión',
       group: 'Neuroticismo',
     },
-    // Preguntas de 
+    // Preguntas de extroversion
+    {
+      id: 'VulnerabilidadP2',
+      question: 'Estoy calmado incluso en momentos de tensión',
+      group: 'Neuroticismo',
+    },
+    {
+      id: 'VulnerabilidadP2',
+      question: 'Estoy calmado incluso en momentos de tensión',
+      group: 'Neuroticismo',
+    },
   ];
 
   // Define las opciones de respuesta para todas las preguntas
@@ -172,9 +182,23 @@ console.log('Resultados para la Base de Datos:', resultsToDatabase);
 
 
 
-    // Manejar cambios en las respuestas
+    // Codigo para asignar puntajes a las respuestas 
     const handleResponseChange = (questionId, responseIndex) => {
-    setResponses({ ...responses, [questionId]: responseIndex });
+    // Resta 1 al valor máximo (4) para invertir los puntajes
+    const invertedScore = 4 - responseIndex;
+
+    // Verifica si la pregunta actual debe tener puntajes no invertidos
+    if (
+      questionId === 'InmoderacionP1' ||
+      questionId === 'InmoderacionP2' ||
+      questionId === 'VulnerabilidadP1' ||
+      questionId === 'VulnerabilidadP2'
+    ) {
+      // Si es una de las preguntas que deben tener puntajes normales
+      invertedScore = responseIndex; // Usa el puntaje normal
+    }
+
+    setResponses({ ...responses, [questionId]: invertedScore });
     };
 
     // Función para calcular el porcentaje de preguntas respondidas
