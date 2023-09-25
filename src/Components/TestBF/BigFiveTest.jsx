@@ -79,14 +79,14 @@ function BigFiveTest() {
     'Totalmente en desacuerdo',
   ];
 
-  // Define los valores asociados a las opciones de respuesta
-  const optionValues = [
-    4, // Totalmente de acuerdo
-    3, // Parcialmente de acuerdo
-    2, // Neutral
-    1, // Parcialmente en desacuerdo
-    0, // Totalmente en desacuerdo
-  ];
+  // Define un objeto para mapear los valores de las opciones
+  const optionValues = {
+    'Totalmente de acuerdo': 5,
+    'Parcialmente de acuerdo': 4,
+    'Neutral': 3,
+    'Parcialmente en desacuerdo': 2,
+    'Totalmente en desacuerdo': 1,
+  };
 
   const pageSize = 3; // Cantidad de preguntas por página
 
@@ -184,10 +184,22 @@ console.log('Resultados para la Base de Datos:', resultsToDatabase);
     // Codigo para asignar puntajes a las respuestas 
     const handleResponseChange = (questionId, responseIndex) => {
     // Obtener el valor asociado a la respuesta seleccionada
-    const selectedValue = optionValues[responseIndex];
+    const selectedValue = optionValues[options[responseIndex]];
 
-    // Actualizar el estado de las respuestas
-    setResponses({ ...responses, [questionId]: selectedValue });
+    // Verificar si la pregunta es una de las que deben invertir los valores
+    if (
+      questionId === 'InmoderacionP1' ||
+      questionId === 'InmoderacionP2' ||
+      questionId === 'VulnerabilidadP1' ||
+      questionId === 'VulnerabilidadP2'
+    ) {
+      // Invertir el valor
+      const invertedValue = 6 - selectedValue;
+      setResponses({ ...responses, [questionId]: invertedValue });
+    } else {
+      // De lo contrario, asignar el valor normal
+      setResponses({ ...responses, [questionId]: selectedValue });
+    }
     };
 
     // Función para calcular el porcentaje de preguntas respondidas
