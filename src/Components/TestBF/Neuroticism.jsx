@@ -77,7 +77,21 @@ function Neuroticism() {
     'Totalmente en desacuerdo',
   ];
 
-  // Calcular resultados por grupo
+  const pageSize = 3; // Cantidad de preguntas por página
+
+  // Estado para controlar la página actual
+  const [currentPage, setCurrentPage] = useState(0); // Página actual
+
+  // Estado para almacenar las respuestas
+  const [responses, setResponses] = useState({});
+
+  // Controla si se puede avanzar
+  const [canAdvance, setCanAdvance] = useState(false); 
+
+  // Controla si se puede regresar
+  const [canGoBack, setCanGoBack] = useState(false); 
+
+// Calcular resultados por grupo
 const calculateResultsByGroup = () => {
   const resultsByGroup = {};
 
@@ -97,7 +111,6 @@ const calculateResultsByGroup = () => {
 
   return resultsByGroup;
 };
-
 
 const calculateResultsByQuestionInGroup = (groupName) => {
   const resultsByQuestion = {};
@@ -125,21 +138,6 @@ console.log('Resultados por Grupo:', resultsByGroup);
 
 // Mostrar resultados por pregunta dentro de un grupo
 console.log('Resultados en Neuroticismo:', resultsInNeuroticism);
-
-  const pageSize = 3; // Cantidad de preguntas por página
-
-  // Estado para controlar la página actual
-  const [currentPage, setCurrentPage] = useState(0); // Página actual
-
-  // Estado para almacenar las respuestas
-  const [responses, setResponses] = useState({});
-
-  // Controla si se puede avanzar
-  const [canAdvance, setCanAdvance] = useState(false); 
-
-  // Controla si se puede regresar
-  const [canGoBack, setCanGoBack] = useState(false); 
-
 
   // Manejar cambios en las respuestas
   const handleResponseChange = (questionId, responseIndex) => {
