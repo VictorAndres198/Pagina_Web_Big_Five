@@ -79,14 +79,22 @@ function BigFiveTest() {
     'Totalmente en desacuerdo',
   ];
 
-  // Define un objeto para mapear los valores de las opciones
-  const optionValues = {
-    'Totalmente de acuerdo': 5,
-    'Parcialmente de acuerdo': 4,
-    'Neutral': 3,
-    'Parcialmente en desacuerdo': 2,
-    'Totalmente en desacuerdo': 1,
-  };
+  // Define los valores asociados a las opciones de respuesta
+  const optionValues = [
+    4, // Totalmente de acuerdo
+    3, // Parcialmente de acuerdo
+    2, // Neutral
+    1, // Parcialmente en desacuerdo
+    0, // Totalmente en desacuerdo
+  ];
+
+  const optionValuesI = [
+    0, // Totalmente de acuerdo
+    1, // Parcialmente de acuerdo
+    2, // Neutral
+    3, // Parcialmente en desacuerdo
+    4, // Totalmente en desacuerdo
+  ];
 
   const pageSize = 3; // Cantidad de preguntas por página
 
@@ -183,8 +191,6 @@ console.log('Resultados para la Base de Datos:', resultsToDatabase);
 
     // Codigo para asignar puntajes a las respuestas 
     const handleResponseChange = (questionId, responseIndex) => {
-    // Obtener el valor asociado a la respuesta seleccionada
-    const selectedValue = optionValues[options[responseIndex]];
 
     // Verificar si la pregunta es una de las que deben invertir los valores
     if (
@@ -193,11 +199,13 @@ console.log('Resultados para la Base de Datos:', resultsToDatabase);
       questionId === 'VulnerabilidadP1' ||
       questionId === 'VulnerabilidadP2'
     ) {
-      // Invertir el valor
-      const invertedValue = 6 - selectedValue;
+      // Obtener el valor invertido
+      const invertedValue = optionValuesI[responseIndex];
       setResponses({ ...responses, [questionId]: invertedValue });
     } else {
-      // De lo contrario, asignar el valor normal
+      // Obtener el valor asociado a la respuesta seleccionada
+      const selectedValue = optionValues[responseIndex];
+      // Actualizar el estado de las respuestas
       setResponses({ ...responses, [questionId]: selectedValue });
     }
     };
