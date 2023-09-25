@@ -175,25 +175,18 @@ const resultsToDatabase = {
     //total: resultsByGroup['Extraversion'],
     // Agrega preguntas dentro de Extraversion según sea necesario
   },
-  // Agrega más grupos según sea necesario
 };
-
-// Ahora tienes un objeto `resultsToDatabase` con los resultados en un formato que puedes enviar a tu base de datos
-console.log('Resultados para la Base de Datos:', resultsToDatabase);
-
-
+    // todo: Esto es para comprobar los puntajes, borrar despues
+    // Ahora tienes un objeto `resultsToDatabase` con los resultados en un formato que puedes enviar a tu base de datos
+    console.log('Resultados para la Base de Datos:', resultsToDatabase);
 
 
+    // Estado para el valor visual de las opciones seleccionadas
+    const [visualValues, setVisualValues] = useState({});
 
-
-
-// Estado para el valor visual de las opciones seleccionadas
-const [visualValues, setVisualValues] = useState({});
-
-    // Codigo para asignar puntajes a las respuestas 
-    const handleResponseChange = (questionId, responseIndex) => {
-    
-
+    // Codigo para asignar puntajes a las respuestas
+    // todo: Agregar las preguntas de puntajes invertidos, solo estan los de neuroticismo 
+    const handleResponseChange = (questionId, responseIndex) => {    
     // Verificar si la pregunta es una de las que deben invertir los valores
     if (
       questionId === 'InmoderacionP1' ||
@@ -210,7 +203,6 @@ const [visualValues, setVisualValues] = useState({});
       // Actualizar el estado de las respuestas
       setResponses({ ...responses, [questionId]: selectedValue });
     }
-    
       // Actualizar el estado visual para mantener el valor marcado
       setVisualValues({ ...visualValues, [questionId]: responseIndex });
     };
