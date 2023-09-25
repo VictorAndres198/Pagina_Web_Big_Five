@@ -91,11 +91,11 @@ function BigFiveTest() {
 
   // Define los valores asociados a las opciones de respuesta
   const optionValues = [
-    5, // Totalmente de acuerdo
-    4, // Parcialmente de acuerdo
-    3, // Neutral
-    2, // Parcialmente en desacuerdo
-    1, // Totalmente en desacuerdo
+    4, // Totalmente de acuerdo
+    3, // Parcialmente de acuerdo
+    2, // Neutral
+    1, // Parcialmente en desacuerdo
+    0, // Totalmente en desacuerdo
   ];
 
   const pageSize = 3; // Cantidad de preguntas por página
