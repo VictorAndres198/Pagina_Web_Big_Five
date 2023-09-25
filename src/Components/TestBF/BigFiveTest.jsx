@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 function BigFiveTest() {
   // Define las preguntas y opciones de respuesta de manera programática
   const bigfiveQuestions = [
+    // Preguntas de Neuroticismo
     {
       id: 'AnsiedadP1',
       question: 'Me suelo preocupar por las cosas',
@@ -47,12 +48,12 @@ function BigFiveTest() {
       group: 'Neuroticismo',
     },
     {
-      id: 'InmoderaciónP1',
+      id: 'InmoderacionP1',
       question: 'Rara vez me dejo llevar',
       group: 'Neuroticismo',
     },
     {
-      id: 'InmoderaciónP2',
+      id: 'InmoderacionP2',
       question: 'Puedo controlar mis antojos',
       group: 'Neuroticismo',
     },
@@ -65,7 +66,8 @@ function BigFiveTest() {
       id: 'VulnerabilidadP2',
       question: 'Estoy calmado incluso en momentos de tensión',
       group: 'Neuroticismo',
-    }
+    },
+    // Preguntas de 
   ];
 
   // Define las opciones de respuesta para todas las preguntas
@@ -130,24 +132,50 @@ const calculateResultsByQuestionInGroup = (groupName) => {
 };
 
 // Calcular los resultados por grupo y por pregunta
+// todo:Agregar los demás campos, ya funciona neuroticismo
 const resultsByGroup = calculateResultsByGroup();
 const resultsInNeuroticism = calculateResultsByQuestionInGroup('Neuroticismo');
 
 // Mostrar resultados por grupo
+// todo: Quitar los resultados de la consola para luego mandarlo a la base de datos, ya funciona neuroticismo
 console.log('Resultados por Grupo:', resultsByGroup);
-
 // Mostrar resultados por pregunta dentro de un grupo
 console.log('Resultados en Neuroticismo:', resultsInNeuroticism);
 
-  // Manejar cambios en las respuestas
-  const handleResponseChange = (questionId, responseIndex) => {
-    setResponses({ ...responses, [questionId]: responseIndex });
-  };
+// !Modificar para agregar los valores a la base de datos que agregare
+// Ahora puedes guardar los resultados en un formato que facilite el envío a una base de datos
+const resultsToDatabase = {
+  neuroticismo: {
+    total: resultsByGroup['Neuroticismo'],
+    ansiedad: resultsInNeuroticism['AnsiedadP1'] + resultsInNeuroticism['AnsiedadP2'],
+    ira: resultsInNeuroticism['IraP1'] + resultsInNeuroticism['IraP2'],
+    depresion: resultsInNeuroticism['DepresionP1'] + resultsInNeuroticism['DepresionP2'],
+    autoconciencia: resultsInNeuroticism['AutoconcienciaP1'] + resultsInNeuroticism['AutoconcienciaP2'],
+    inmoderacion: resultsInNeuroticism['InmoderacionP1'] + resultsInNeuroticism['InmoderacionP2'],
+    vulnerabilidad: resultsInNeuroticism['VulnerabilidadP1'] + resultsInNeuroticism['VulnerabilidadP2'],
+  },
+  extraversion: {
+    //total: resultsByGroup['Extraversion'],
+    // Agrega preguntas dentro de Extraversion según sea necesario
+  },
+  // Agrega más grupos según sea necesario
+};
 
-  // Función para calcular el resultado del test (puedes personalizar esta lógica)
-  const calculateResult = () => {
-    // Implementa la lógica para calcular el resultado aquí
-  };
+// Ahora tienes un objeto `resultsToDatabase` con los resultados en un formato que puedes enviar a tu base de datos
+console.log('Resultados para la Base de Datos:', resultsToDatabase);
+
+
+
+
+
+
+
+
+
+    // Manejar cambios en las respuestas
+    const handleResponseChange = (questionId, responseIndex) => {
+    setResponses({ ...responses, [questionId]: responseIndex });
+    };
 
     // Función para calcular el porcentaje de preguntas respondidas
     const calculateProgress = () => {
@@ -171,7 +199,6 @@ console.log('Resultados en Neuroticismo:', resultsInNeuroticism);
       setCanGoBack(currentPage > 0);
     }, [responses, currentPage, bigfiveQuestions]);
 
-
     const nextPage = () => {
       if (currentPage < bigfiveQuestions.length / pageSize - 1) {
         setCurrentPage(currentPage + 1);
@@ -189,8 +216,8 @@ console.log('Resultados en Neuroticismo:', resultsInNeuroticism);
       (currentPage + 1) * pageSize
     );
 
-  // Renderizar el formulario del test
-  return (
+    // Renderizar el formulario del test
+    return (
     <div>
       <form className="question-container">
         <ProgressBar className="progress-bar-test" animated now={calculateProgress()} />
@@ -225,7 +252,7 @@ console.log('Resultados en Neuroticismo:', resultsInNeuroticism);
         </Button>
       </section>
     </div>
-  );
+    );
 }
 
 export default BigFiveTest;
