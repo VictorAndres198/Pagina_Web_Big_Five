@@ -3,8 +3,8 @@ import './styles.css'
 import {Route,Routes} from 'react-router-dom'
 
 import Home from './Components/Home'; 
-import Test from './Components/Test';
 import BigFiveTest from './Components/TestBF/BigFiveTest';
+import TestResultado from './Components/TestBF/TestResultado';
 
 import Navbar from './Navbar';
 
@@ -14,8 +14,8 @@ function App(){
             <Navbar/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
-                <Route path='/Test' element={<Test/>}/>
                 <Route path='/BigFiveTest' element={<BigFiveTest/>}/>
+                <Route path='/TestResultado' element={<TestResultado/>}/> 
             </Routes>   
         </div>
     )

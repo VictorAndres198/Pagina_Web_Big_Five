@@ -13,7 +13,7 @@ function CustomNavbar() {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
                     <NavDropdown title="Idioma" id="language-dropdown">
-                        <NavDropdown.Item as={Link} to="/Test">Español</NavDropdown.Item>
+                        <NavDropdown.Item /*as={Link} to="/Agregar_la_ruta_del_archivo_JSX"*/>Español</NavDropdown.Item>
                         <NavDropdown.Item>Inglés</NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="Menú" id="menu-dropdown">

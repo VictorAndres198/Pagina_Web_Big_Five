@@ -2,6 +2,8 @@ import React, { useState,useEffect } from 'react';
 import '../../styles.css';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
+
 
 function BigFiveTest() {
   // Define las preguntas y opciones de respuesta de manera programática
@@ -353,6 +355,10 @@ function BigFiveTest() {
   // Controla si se puede regresar
   const [canGoBack, setCanGoBack] = useState(false); 
 
+  // Estado para saber si todas las preguntas han sido respondidas
+  const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
+  
+
   // Calcular resultados por grupo
   const calculateResultsByGroup = () => {
   const resultsByGroup = {};
@@ -524,6 +530,14 @@ function BigFiveTest() {
 
       setCanAdvance(allAnswered);
       setCanGoBack(currentPage > 0);
+      
+      // Verificar si todas las preguntas del test han sido respondidas
+      const allQuestionsAnswered = bigfiveQuestions.every(
+        (question) => responses[question.id] !== undefined
+      );
+      
+      setAllQuestionsAnswered(allQuestionsAnswered);
+
     }, [responses, currentPage, bigfiveQuestions]);
 
     const nextPage = () => {
@@ -542,6 +556,15 @@ function BigFiveTest() {
       currentPage * pageSize,
       (currentPage + 1) * pageSize
     );
+
+    const navigate = useNavigate();
+    
+    const handleFinish = () => {
+      // todo: Realizar lógica necesaria antes de finalizar
+      
+      // Redirige a la página de resultados cuando finaliza
+      navigate('/TestResultado'); 
+    };
 
     // Renderizar el formulario del test
     return (
@@ -574,9 +597,13 @@ function BigFiveTest() {
         <Button onClick={prevPage} disabled={!canGoBack}>
           Regresar
         </Button>
-        <Button onClick={nextPage} disabled={!canAdvance}>
-          Siguiente
-        </Button>
+        {allQuestionsAnswered ? (
+          <Button onClick={handleFinish}>Finalizar</Button>
+        ) : (
+          <Button onClick={nextPage} disabled={!canAdvance}>
+            Siguiente
+          </Button>
+        )}
       </section>
     </div>
     );
