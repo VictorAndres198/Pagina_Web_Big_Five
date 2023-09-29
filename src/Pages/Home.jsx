@@ -7,9 +7,9 @@ function Home() {
     <div>
         <section className='centered-column maintest'>
             <h1>Test Big Five</h1>
-             <Link to="/BigFiveTest" className="btn btn-outline-secondary btn-lg btn-block">
+             <Link to="/BigFiveTest"  className="btn btn-outline-secondary btn-lg btn-block mainButton">
               Iniciar el Test
-            </Link>     
+            </Link>
         </section>  
     </div>
   );

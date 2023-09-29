@@ -1,12 +1,11 @@
 import React from 'react'
-import './styles.css'
 import {Route,Routes} from 'react-router-dom'
 
-import Home from './Components/Home'; 
-import BigFiveTest from './Components/TestBF/BigFiveTest';
-import TestResultado from './Components/TestBF/TestResultado';
+import Home from './Pages/Home'; 
+import BigFiveTest from './Pages/TestBF/BigFiveTest';
+import TestResultado from './Pages/TestBF/TestResultado';
 
-import Navbar from './Navbar';
+import Navbar from './Components/Navbar';
 
 function App(){
     return (
