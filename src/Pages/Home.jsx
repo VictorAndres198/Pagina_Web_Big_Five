@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles.css';
 import { Link } from 'react-router-dom';
+import MeteorShower from '../Components/MeteorShower';
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
              <Link to="/BigFiveTest"  className="btn btn-outline-secondary btn-lg btn-block mainButton">
               Iniciar el Test
             </Link>
+            <MeteorShower/>
         </section>  
     </div>
   );
