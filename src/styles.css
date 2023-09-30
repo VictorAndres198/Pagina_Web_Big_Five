@@ -1,6 +1,8 @@
+ /*!ELiminar esto, solución momentanea*/
  *{
   color: white;
  }
+ 
  .centered-column{
     display:flex;
     flex-direction: column;
@@ -51,4 +53,8 @@
   .mainButton{
     margin-top: 5px;   
     z-index: 999; 
+  }
+
+  .barranav{
+    z-index: 998;
   }
