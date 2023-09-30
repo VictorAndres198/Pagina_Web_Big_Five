@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles.css';
 import { Link } from 'react-router-dom';
 import MeteorShower from '../Components/MeteorShower';
+import SolarSystem from '../Components/SolarSystem';
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
               Iniciar el Test
             </Link>
             <MeteorShower/>
+            <SolarSystem/>
         </section>  
     </div>
   );
