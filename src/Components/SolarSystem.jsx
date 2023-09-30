@@ -2,7 +2,7 @@ import React from "react";
 import './solarsystem.css';
 
 function SolarSystem(){
-    return (
+    return (       
         <div className="sun">
         <div className="mercury-outline">
             <div className="mercury">

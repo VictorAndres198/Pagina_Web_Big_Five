@@ -3,7 +3,8 @@ import "./meteorshower.css";
 
 function MeteorShower(){
     return (
-    <div>
+        <div className="animation-container">
+        <div className="meteor-hidden">
         <section className="meteor-section">
             <span className="meteor-span"></span>
             <span className="meteor-span"></span>
@@ -16,7 +17,8 @@ function MeteorShower(){
             <span className="meteor-span"></span>
             <span className="meteor-span"></span>
         </section>
-    </div>
+        </div>
+        </div>
     );
 };
 export default MeteorShower;

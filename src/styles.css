@@ -1,10 +1,14 @@
-  .centered-column{
+ *{
+  color: white;
+ }
+ .centered-column{
     display:flex;
     flex-direction: column;
     justify-content:center;
     align-items:center;
     gap: 15px;    
-    margin-top: 3%;
+    padding-top: 750px;
+    z-index: 3;
 }
 .centered-column-test{
     display:flex;
@@ -45,5 +49,6 @@
   }
 
   .mainButton{
-    margin-top: 5px;    
+    margin-top: 5px;   
+    z-index: 999; 
   }
