@@ -143,3 +143,125 @@
     animation-delay: 0.75s;
     animation-duration: 16.25s;
 }
+@media (max-width: 768px) {
+    .meteor-span{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 3px;
+        height: 3px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(255,255,255,0.1),
+        0 0 0 2px rgba(255,255, 255, 0.1),
+        0 0 20px rgb(255, 255, 255,1);
+        animation: animate 3s linear infinite;
+        z-index: 1;
+    }
+    .meteor-span::before
+    {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 70px;
+        height: 1px;
+        background: linear-gradient(90deg,#fff,transparent);
+    }
+    @keyframes animate{
+        0%
+        {
+            transform: rotate(315deg) translateX(0);
+            opacity: 1;
+        }
+        70%
+        {
+            opacity: 1;
+        }
+        100%
+        {
+            transform: rotate(315deg) translateX(-700px);
+            opacity: 0;
+        }
+    }
+    .meteor-span:nth-child(1)
+{
+    top: 0;
+    right: 0;
+    left: initial;
+    animation-delay: 0;
+    animation-duration: 11s;
+}
+.meteor-span:nth-child(2)
+{
+    top: 0;
+    right: 40px;
+    left: initial;
+    animation-delay: 0.2s;
+    animation-duration: 13s;
+}
+.meteor-span:nth-child(3)
+{
+    top: 0px;
+    right: -150px;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 10s;
+}
+.meteor-span:nth-child(4)
+{
+    top: 0px;
+    right: 90px;
+    left: initial;
+    animation-delay: 0.6s;
+    animation-duration: 19s;
+}
+.meteor-span:nth-child(5)
+{
+    top: 0px;
+    right: 200px;
+    left: initial;
+    animation-delay: 0.8s;
+    animation-duration: 12s;
+}
+.meteor-span:nth-child(6)
+{
+    top: 0px;
+    left: 300px;
+    right: initial;
+    animation-delay: 1s;
+    animation-duration: 17s;
+}
+.meteor-span:nth-child(7)
+{
+    top: 0px;
+    left: 400px;
+    right: initial;
+    animation-delay: 1.2s;
+    animation-duration: 10s;
+}
+.meteor-span:nth-child(8)
+{
+    top: 0px;
+    left: 350px;
+    right: initial;
+    animation-delay: 1.4s;
+    animation-duration: 9s;
+}
+.meteor-span:nth-child(9)
+{
+    top: 0px;
+    left: 500px;
+    right: initial;
+    animation-delay: 0.75s;
+    animation-duration: 14s;
+}
+.meteor-span:nth-child(10)
+{
+    top: 0px;
+    left: 225px;
+    right: initial;
+    animation-delay: 0.75s;
+    animation-duration: 16s;
+}
+}
