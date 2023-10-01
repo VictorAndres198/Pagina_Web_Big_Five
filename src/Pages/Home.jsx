@@ -8,10 +8,10 @@ import { Fragment } from 'react';
 
 function Home() {
   return (
-    <Fragment>
-      <Background/>   
+    <Fragment>  
+    <div className='home-body'>
             <section>
-                <div className='centered-column maintest'>
+                <div className='centered-column'>
                   <h1>Test Big Five</h1>
                     <Link to="/BigFiveTest"  className="btn btn-outline-secondary btn-lg btn-block mainButton">
                       Iniciar el Test
@@ -23,6 +23,8 @@ function Home() {
                   <SolarSystem/>
                 </div>                
             </section>  
+    </div>
+    <Background/>
     </Fragment>
   );
 }

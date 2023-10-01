@@ -1,15 +1,11 @@
  /*!ELiminar esto, solución momentanea*/
- *{
-  color: white;
- }
- 
  .centered-column{
     display:flex;
     flex-direction: column;
     justify-content:center;
     align-items:center;
     gap: 15px;    
-    padding-top: 750px;
+    padding-top: 820px;
     z-index: 3;
 }
 .centered-column-test{
@@ -44,10 +40,6 @@
   .progress-bar-test {
     margin-top: 5vw;
     margin-bottom: 3vw;
-  }
-
-  .maintest{
-    margin-top: 3vw;    
   }
 
   .mainButton{

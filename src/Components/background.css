@@ -4,14 +4,15 @@ html, body{
     padding: 0;
     box-sizing: border-box;
 }
-body{
+.home-body{
+    height: 1244px;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 .background-container{
     position: absolute;
     width: 100%;
     max-width: 100%; /* Puedes ajustar el ancho máximo según tus necesidades */
-    height: 100%; /* Establece la altura deseada para tu animación */
+    height: 1300px; /* Establece la altura deseada para tu animación */
     top: 0; /* Ajusta la posición vertical según tus necesidades */
     left: 0; /* Ajusta la posición horizontal según tus necesidades */
     overflow: hidden;

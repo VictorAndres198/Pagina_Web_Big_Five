@@ -1,4 +1,3 @@
-
 .sun{
     height: 120px;
     width: 120px;
@@ -232,7 +231,7 @@
     left: 48%;
     top: 48%;
     transform: translate(-50%, 50%);
-    animation: orbit11 200s linear infinite;
+    animation: orbit11 250s linear infinite;
 }
 @keyframes orbit11{
     from{transform: rotate(0deg)translateX(310px) rotate(0deg);}
