@@ -8,7 +8,7 @@ import '../styles.css'
 
 function CustomNavbar() {
     return (
-        <Navbar bg="light" expand="lg" className='barranav'>
+        <Navbar expand="lg" className='barranav navbar navbar-dark bg-dark'>
             <Navbar.Brand as={Link} to="/">Logo</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

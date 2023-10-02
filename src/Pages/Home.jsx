@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles.css';
-import { Link } from 'react-router-dom';
 import MeteorShower from '../Components/MeteorShower';
 import SolarSystem from '../Components/SolarSystem';
 import Background from '../Components/Background';
 import { Fragment } from 'react';
+import Button from '../Components/Button';
 
 function Home() {
   return (
@@ -13,9 +13,7 @@ function Home() {
             <section>
                 <div className='centered-column'>
                   <h1>Test Big Five</h1>
-                    <Link to="/BigFiveTest"  className="btn btn-outline-secondary btn-lg btn-block mainButton">
-                      Iniciar el Test
-                    </Link>
+                    <Button to='BigFiveTest' text='Iniciar el Test'/>
                 </div>
               
                 <div className='animation-container'> 

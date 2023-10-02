@@ -5,7 +5,7 @@
     align-items:center;
     gap: 15px;    
     padding-top: 820px;
-    z-index: 3;
+    z-index: 990;
 }
 @media (max-width: 768px) {
   .centered-column{
@@ -46,11 +46,6 @@
     margin-bottom: 3vw;
   }
 
-  .mainButton{
-    margin-top: 5px;   
-    z-index: 999; 
-  }
-
-  .barranav{
-    z-index: 998;
+  .barranav {
+    z-index: 980;
   }

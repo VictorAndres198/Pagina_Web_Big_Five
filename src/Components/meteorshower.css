@@ -1,27 +1,30 @@
-/*! MeteorShower Css*/
 .animation-container {
     position: absolute;
     width: 100%;
-    max-width: 100%; /* Puedes ajustar el ancho máximo según tus necesidades */
-    height: 1300px; /* Establece la altura deseada para tu animación */
-    top: 0; /* Ajusta la posición vertical según tus necesidades */
-    left: 0; /* Ajusta la posición horizontal según tus necesidades */
-    overflow: hidden;
+    max-width: 100%; 
+    height: 1300px; 
+    top: 0; 
+    left: 0; 
+    overflow: hidden;    
+    /*! Agregado para poder darle al boton del inicio */
+    pointer-events: none;
   }
 .meteor-hidden{
     position: relative;
     width: 100%; 
     height: 100%; 
     z-index: 1;
+    /*! Agregado para poder darle al boton del inicio */
+    pointer-events: none;
 }
 .meteor-section{
-    position: absolute; /* O fixed, según tu preferencia */
+    position: absolute; 
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: auto;
     height: auto;
-    z-index: -1; /* Coloca la animación detrás de otros elementos */
+    z-index: -1; 
 }
 .meteor-span{
     position: absolute;
