@@ -96,7 +96,7 @@
     transform: translate(-242px,0px) scale(1.2);
 }
 .main-button:hover .buttonstar4{
-    transform: translate(-242px,-40px) scale(1.8);
+    transform: translate(-210px,-40px) scale(1.2);
     background-color: #cac2b921;
     box-shadow: -4px 2px 56px #cac2b9; 
 }
