@@ -8,7 +8,6 @@ import star3 from './Images/star3.svg';
 
 function Button({to,text,onClick}){
     return(
-        <div>
             <Link to={to}>
                 <button className='main-button' onClick={onClick}>
                     <span className='text-button'>{text}</span>
@@ -18,7 +17,6 @@ function Button({to,text,onClick}){
                     <img src={star} alt="" className="buttonstar4" />                    
                 </button>                
             </Link>    
-            </div>
     );
 };
 
