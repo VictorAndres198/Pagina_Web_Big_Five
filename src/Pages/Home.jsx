@@ -12,7 +12,7 @@ function Home() {
     <div className='home-body'>
             <section>
                 <div className='centered-column'>
-                  <h1>Test Big Five</h1>
+                  <h1 className='text-home'>Test Big Five</h1>
                     <Button to='BigFiveTest' text='Iniciar el Test'/>
                 </div>
               
